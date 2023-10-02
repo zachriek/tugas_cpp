@@ -135,7 +135,7 @@ void select_menu()
     system("cls");
 
     string my_option = (option >= 1 && option <= 3) ? foods[option - 1] : drinks[option - 3 - 1];
-    cout << "Kamu memilih " << my_option << endl;
+    cout << "Kamu memilih " << my_option << " " << order_count << "x" << endl;
     print_line();
     cout << "Total Harga: " << format_rupiah(to_string(int(total))) << endl;
     print_line();
@@ -157,9 +157,6 @@ void select_menu()
 
 int main()
 {
-  printf("Selamat Datang di Resto MAUMAKAN :D\n");
-  print_line();
-
   show_menu();
   select_menu();
 
