@@ -61,6 +61,8 @@ void age_menu()
 
 void show_menu()
 {
+  system("cls");
+
   switch (age)
   {
   case 1 ... 12:
@@ -92,7 +94,9 @@ void show_menu()
 
   default:
     printf("Usia tidak valid!");
+    break;
   }
+  print_line();
 }
 
 void ticket_menu()
@@ -104,13 +108,31 @@ void ticket_menu()
 
 void select_menu()
 {
-  system("cls");
-
   show_menu();
-
-  print_line();
   printf("Pilih film yang ada di atas (contoh: 1)\n");
   scanf("%d", &option);
+
+  switch (age)
+  {
+  case 0 ... 12:
+    switch (option)
+    {
+    case 3 ... 6:
+      return select_menu();
+      break;
+    }
+    break;
+  case 13 ... 16:
+    switch (option)
+    {
+    case 5 ... 6:
+      return select_menu();
+      break;
+    }
+    break;
+  default:
+    break;
+  }
 
   switch (option)
   {
@@ -125,7 +147,8 @@ void select_menu()
     show_result();
     break;
   default:
-    printf("Pilihan Film tidak valid!");
+    printf("Pilihan Film tidak valid!\n");
+    return select_menu();
     break;
   }
 }
