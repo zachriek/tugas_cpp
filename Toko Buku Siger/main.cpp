@@ -42,7 +42,7 @@ float atk_prices[6] = {
     18500,
 };
 
-int atk_length = sizeof(atk_list) / sizeof(string);
+int const atk_length = sizeof(atk_list) / sizeof(string);
 
 int book_option, atk_option;
 float book_price_total = 0, atk_price_total = 0, price_total = 0;
@@ -103,7 +103,7 @@ void atk_menu()
 
     switch (atk_option)
     {
-    case 1 ... books_length:
+    case 1 ... atk_length:
       atk_price_total += atk_prices[atk_option - 1];
       break;
     default:
