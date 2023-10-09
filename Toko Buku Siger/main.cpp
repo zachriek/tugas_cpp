@@ -86,7 +86,7 @@ void welcome_menu()
 
 void atk_menu()
 {
-  char is_continue = 'n';
+  char is_continue_atk = 'n';
 
   do
   {
@@ -118,8 +118,8 @@ void atk_menu()
     print_line();
 
     printf("Ingin memilih ATK lagi? (y/n)\n");
-    scanf(" %c", &is_continue);
-  } while (tolower(is_continue) == 'y');
+    scanf(" %c", &is_continue_atk);
+  } while (tolower(is_continue_atk) == 'y');
 
   price_total = book_price_total + atk_price_total;
 
@@ -128,7 +128,7 @@ void atk_menu()
 
 void books_menu()
 {
-  char is_continue = 'n';
+  char is_continue_book = 'n';
 
   do
   {
@@ -160,8 +160,8 @@ void books_menu()
     print_line();
 
     printf("Ingin memilih buku lagi? (y/n)\n");
-    scanf(" %c", &is_continue);
-  } while (tolower(is_continue) == 'y');
+    scanf(" %c", &is_continue_book);
+  } while (tolower(is_continue_book) == 'y');
 
   atk_menu();
 }
